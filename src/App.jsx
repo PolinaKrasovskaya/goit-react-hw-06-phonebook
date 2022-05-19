@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addNewContact, deleteThisContact, filterContacts } from './redux/contactsSlice'
+import { addNewContact, deleteThisContact, filterContacts, getContacts, getFilter } from './redux/contactsSlice'
 import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
@@ -8,8 +8,8 @@ import { nanoid } from 'nanoid';
 
 export default function App() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.items);
-  const filter = useSelector(state => state.contacts.filter);
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
   console.log(contacts)
 
   useEffect(() => {
