@@ -1,9 +1,9 @@
-import propTypes from 'prop-types';
 import React from 'react';
 import {
   ItemList,
   ItemButton,
-} from './ListItem.styles'
+} from './ListItem.styles';
+import propTypes from 'prop-types';
 
 const ListItem = ({ name, number, id, onDeleteContact }) => (
   <ItemList>
